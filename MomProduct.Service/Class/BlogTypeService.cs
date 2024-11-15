@@ -1,27 +1,22 @@
-﻿using Dapper;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using MomProduct.Model;
+using MomProduct.Service.Interface;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using MomProduct.Model;
+using Dapper;
 
-
-namespace MomProductApi.Repositories
+namespace MomProduct.Service.Class
 {
-    public interface IBlogTypeRepository
-    {
-        Task<IEnumerable<BlogType>> GetAllAsync();
-        Task<BlogType?> GetByIdAsync(int id);
-        Task<int> AddAsync(BlogType BlogType);
-        Task<int> UpdateAsync(BlogType BlogType);
-        Task<int> DeleteAsync(int id);
-    }
-
-    public class BlogTypeRepository : IBlogTypeRepository
+    public class BlogTypeService: IBlogTypeService
     {
         private readonly string _connectionString;
 
-        public BlogTypeRepository(IConfiguration configuration)
+        public BlogTypeService(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
@@ -64,3 +59,4 @@ namespace MomProductApi.Repositories
         }
     }
 }
+
