@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MomProduct.Model;
-using MomProduct.Service;
 using MomProduct.Service.Interface;
 
 namespace MomProductApi.Controllers
