@@ -34,14 +34,14 @@ namespace MomProduct.Service.Class
 
         public async Task<int> AddAsync(BlogType blogType)
         {
-            const string query = "INSERT INTO BlogType (BlogName, Description) VALUES (@BlogName, @Descriptione)";
+            const string query = "INSERT INTO BlogType (BlogName, Description) VALUES (@BlogName, @Description)";
             using var connection = CreateConnection();
             return await connection.ExecuteAsync(query, blogType);
         }
 
         public async Task<int> UpdateAsync(BlogType blogType)
         {
-            const string query = "UPDATE BlogType SET BlogName = @BlogName AND Description = @Description WHERE Id = @Id";
+            const string query = "UPDATE BlogType SET BlogName = @BlogName, Description = @Description WHERE Id = @Id";
             using var connection = CreateConnection();
             return await connection.ExecuteAsync(query, blogType);
         }

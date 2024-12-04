@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using MomProduct.Model;
 using MomProduct.Service.Interface;
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace MomProduct.Service.Class
 {
