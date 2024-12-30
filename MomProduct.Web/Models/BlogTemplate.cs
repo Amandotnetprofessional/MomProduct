@@ -1,6 +1,4 @@
-﻿
-
-namespace MomProduct.Model
+﻿namespace MomProduct.Web.Models
 {
     public class BlogTemplate
     {
@@ -19,7 +17,6 @@ namespace MomProduct.Model
         public string CreatedBy { get; set; }
 
         public string ModifyBy { get; set; }
-
         public string BlogImage { get; set; }
 
     }

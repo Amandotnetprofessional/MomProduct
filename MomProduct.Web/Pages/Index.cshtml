@@ -1,5 +1,6 @@
 ﻿@page
-@model IndexModel
+@model IEnumerable<MomProduct.Web.Models.BlogTemplate>
+
 @{
     ViewData["Title"] = "Home page";
 }
@@ -37,7 +38,16 @@
 <body>
     <div class="container">
 
-        <div class="card">
+        @foreach (var blog in Model)
+        {
+            <div class="card">
+                <img src="@blog.BlogImage" alt="Plant Image" />
+                <div class="number">@blog.Id</div>
+                <div class="title">@blog.BlogTitle</div>
+            </div>
+        }
+
+       @*  <div class="card">
             <img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg" alt="Plant Image" />
             <div class="number">1</div>
             <div class="title">5 Helpful Tips for Growing Healthy Succulents</div>
@@ -65,7 +75,7 @@
             <img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg" alt="Plant Image" />
             <div class="number">1</div>
             <div class="title">5 Helpful Tips for Growing Healthy Succulents</div>
-        </div>
+        </div> *@
 
     </div>
 </body>
